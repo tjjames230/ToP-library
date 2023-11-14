@@ -60,10 +60,16 @@ button:hover {
   font-size: 18px;
 }
 
-.book-finished {
+.completed {
   background-color: hsl(124, 100%, 52%);
+  border: 3px solid hsl(124, 100%, 52%);
+}
+
+.not-completed {
+  border: 3px solid hsl(124, 100%, 52%);
 }
 
 .book-delete {
   background-color: hsl(13, 100%, 78%);
+  border: 3px solid hsl(13, 100%, 78%);
 }
