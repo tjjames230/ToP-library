@@ -59,3 +59,11 @@ button:hover {
   padding: 15px;
   font-size: 18px;
 }
+
+.book-finished {
+  background-color: hsl(124, 100%, 52%);
+}
+
+.book-delete {
+  background-color: hsl(13, 100%, 78%);
+}
