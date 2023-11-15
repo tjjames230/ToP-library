@@ -22,6 +22,11 @@ addBtn.addEventListener("click", () => {
   });
 });
 
+// FUNCTION TO LOOP THROUGH LIBRARY AND CREATE DIV FOR EACH BOOK
+function displayLibrary(arr) {
+  for (let i = 0; i < arr.length; i++) {}
+}
+
 // CLICK SUBMIT TO CREATE A NEW OBJ AND PUSH TO LIBRARY ARR
 submitBtn.addEventListener("click", (e) => {});
 
