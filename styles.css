@@ -35,7 +35,8 @@ button {
   border: none;
 }
 
-button:hover {
+button:hover,
+#submit:hover {
   cursor: pointer;
 }
 
@@ -45,12 +46,16 @@ button:hover {
   gap: 1rem;
 }
 
-.book {
+.book,
+#popup-ctn {
   display: flex;
   flex-direction: column;
   padding: 25px;
   gap: 15px;
   border-radius: 10px;
+}
+
+.book {
   background-color: #ededed;
   filter: drop-shadow(0 0 5px #eee);
 }
@@ -60,9 +65,16 @@ button:hover {
   font-size: 18px;
 }
 
-.completed {
+.completed,
+#submit {
   background-color: hsl(124, 100%, 52%);
   border: 3px solid hsl(124, 100%, 52%);
+}
+
+.completed:hover,
+#submit:hover {
+  background-color: hsl(124, 100%, 70%);
+  border: 3px solid hsl(124, 100%, 70%);
 }
 
 .not-completed {
@@ -70,8 +82,13 @@ button:hover {
 }
 
 .book-delete {
-  background-color: hsl(13, 100%, 78%);
-  border: 3px solid hsl(13, 100%, 78%);
+  background-color: hsl(0, 100%, 66%);
+  border: 3px solid hsl(0, 100%, 66%);
+}
+
+.book-delete:hover {
+  background-color: hsl(0, 100%, 74%);
+  border: 3px solid hsl(0, 100%, 74%);
 }
 
 #popup-bg {
@@ -87,7 +104,27 @@ button:hover {
 }
 
 #popup-ctn {
-  height: 100px;
-  width: 100px;
-  background-color: black;
+  background-color: white;
+  min-width: 300px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#popup-ctn input {
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
+}
+
+#popup-ctn label {
+  display: block;
+}
+
+#finished {
+  height: 15px;
+  width: 15px;
 }

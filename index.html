@@ -32,7 +32,27 @@
       </section>
     </main>
     <section id="popup-bg">
-      <div id="popup-ctn"></div>
+      <div id="popup-ctn">
+        <form>
+          <div>
+            <label for="title">Book Title:</label>
+            <input id="title" name="title" type="text" />
+          </div>
+          <div>
+            <label for="author">Book Author:</label>
+            <input id="author" name="author" type="text" />
+          </div>
+          <div>
+            <label for="pages">Book Length:</label>
+            <input id="pages" name="pages" type="number" />
+          </div>
+          <div>
+            <label for="finished">Have you completed this book?</label>
+            <input id="finished" name="finished" type="checkbox" />
+          </div>
+          <input type="submit" id="submit" />
+        </form>
+      </div>
     </section>
   </body>
 </html>
