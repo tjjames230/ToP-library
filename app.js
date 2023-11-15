@@ -1,5 +1,3 @@
-console.log("hi");
-
 const library = [];
 const addBtn = document.querySelector("#add-btn");
 const completedBtn = Array.from(document.querySelectorAll(".completed"));
@@ -23,6 +21,9 @@ addBtn.addEventListener("click", () => {
     }
   });
 });
+
+// CLICK SUBMIT TO CREATE A NEW OBJ AND PUSH TO LIBRARY ARR
+submitBtn.addEventListener("click", (e) => {});
 
 // CLICK REMOVE BTN TO DELETE THAT OBJECT FROM LIBRARY ARR
 

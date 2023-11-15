@@ -130,3 +130,7 @@ form {
   height: 15px;
   width: 15px;
 }
+
+#finished:hover {
+  cursor: pointer;
+}
