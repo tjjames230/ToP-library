@@ -36,20 +36,51 @@
         <form>
           <div>
             <label for="title">Book Title:</label>
-            <input id="title" name="title" type="text" required />
+            <input
+              class="text-input"
+              id="title"
+              name="title"
+              type="text"
+              required
+            />
           </div>
           <div>
             <label for="author">Book Author:</label>
-            <input id="author" name="author" type="text" required />
+            <input
+              class="text-input"
+              id="author"
+              name="author"
+              type="text"
+              required
+            />
           </div>
           <div>
             <label for="pages">Book Length:</label>
-            <input id="pages" name="pages" type="number" required />
+            <input
+              class="text-input"
+              id="pages"
+              name="pages"
+              type="number"
+              required
+            />
           </div>
-          <div>
-            <label for="finished">Have you completed this book?</label>
-            <input id="finished" name="finished" type="checkbox" />
-          </div>
+          <fieldset>
+            <legend>Have you completed the book?</legend>
+            <div>
+              <input
+                type="radio"
+                id="yes"
+                name="completed"
+                value="yes"
+                checked
+              />
+              <label for="yes">Yes</label>
+            </div>
+            <div>
+              <input type="radio" id="no" name="completed" value="no" />
+              <label for="no">No</label>
+            </div>
+          </fieldset>
           <input type="submit" id="submit" />
         </form>
       </div>
