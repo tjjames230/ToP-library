@@ -28,7 +28,15 @@ function displayLibrary(arr) {
 }
 
 // CLICK SUBMIT TO CREATE A NEW OBJ AND PUSH TO LIBRARY ARR
-submitBtn.addEventListener("click", (e) => {});
+submitBtn.addEventListener("click", (e) => {
+  console.log(document.querySelector("#title").value);
+  let bookTitle = document.querySelector("#title").value;
+  let bookAuthor = document.querySelector("#author").value;
+  let bookLength = document.querySelector("#pages").value;
+  // NEED TO SOMEHOW EXTRACT VALUE FROM CHECKBOX
+
+  let newBook = new Book();
+});
 
 // CLICK REMOVE BTN TO DELETE THAT OBJECT FROM LIBRARY ARR
 
