@@ -29,13 +29,23 @@ function displayLibrary(arr) {
 
 // CLICK SUBMIT TO CREATE A NEW OBJ AND PUSH TO LIBRARY ARR
 submitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
   let bookTitle = document.querySelector("#title").value;
   let bookAuthor = document.querySelector("#author").value;
   let bookLength = document.querySelector("#pages").value;
-  console.log(bookTitle);
-  // NEED TO SOMEHOW EXTRACT VALUE FROM CHECKBOX
+  let bookCompleted = document.querySelector("#yes").checked ? true : false;
 
-  let newBook = new Book();
+  if (bookTitle != "" && bookAuthor != "" && bookLength != "") {
+    let newBook = new Book(bookTitle, bookAuthor, bookLength, bookCompleted);
+    library.push(newBook);
+  }
+
+  document.querySelector("#title").value = "";
+  document.querySelector("#author").value = "";
+  document.querySelector("#pages").value = "";
+  document.querySelector("#popup-bg").style.display = "none";
+  console.log(library);
 });
 
 // CLICK REMOVE BTN TO DELETE THAT OBJECT FROM LIBRARY ARR
