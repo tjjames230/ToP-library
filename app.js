@@ -31,7 +31,9 @@ function displayLibrary(arr) {
   booksCtn.innerHTML = "";
 
   for (let i = 0; i < arr.length; i++) {
-    document.createElement("div");
+    booksCtn.appendChild(div);
+    div.appendChild(header);
+    header.innerText = "TEST";
   }
 }
 
@@ -54,7 +56,7 @@ submitBtn.addEventListener("click", (e) => {
   document.querySelector("#pages").value = "";
   document.querySelector("#popup-bg").style.display = "none";
 
-  console.log(library);
+  displayLibrary(library);
 });
 
 // CLICK REMOVE BTN TO DELETE THAT OBJECT FROM LIBRARY ARR
