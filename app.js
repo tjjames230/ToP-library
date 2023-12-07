@@ -25,12 +25,13 @@ addBtn.addEventListener("click", () => {
 // FUNCTION TO LOOP THROUGH LIBRARY AND CREATE DIV FOR EACH BOOK
 function displayLibrary(arr) {
   let booksCtn = document.querySelector("#books-ctn");
-  let div = document.createElement("div");
-  let header = document.createElement("h3");
-  let btn = document.createElement("button");
   booksCtn.innerHTML = "";
 
   for (let i = 0; i < arr.length; i++) {
+    let div = document.createElement("div");
+    let header = document.createElement("h3");
+    let btn = document.createElement("button");
+
     booksCtn.appendChild(div);
     div.appendChild(header);
     header.innerText = "TEST";
