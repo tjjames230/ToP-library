@@ -29,12 +29,16 @@ function displayLibrary(arr) {
 
   for (let i = 0; i < arr.length; i++) {
     let div = document.createElement("div");
-    let header = document.createElement("h3");
     let btn = document.createElement("button");
-
     booksCtn.appendChild(div);
-    div.appendChild(header);
-    header.innerText = "TEST";
+
+    for (let j = 0; j < 3; j++) {
+      let header = document.createElement("h3");
+      div.appendChild(header);
+      header.textContent = "TEST";
+    }
+
+    console.log(div[0]);
   }
 }
 
