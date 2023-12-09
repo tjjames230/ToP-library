@@ -3,6 +3,8 @@ const addBtn = document.querySelector("#add-btn");
 const completedBtn = Array.from(document.querySelectorAll(".completed"));
 const deleteBtn = Array.from(document.querySelectorAll(".book-delete"));
 const submitBtn = document.querySelector("#submit");
+const headerClassNames = ["title-header", "title-author", "title-pages"];
+const btnClassNames = ["completed", "book-delete"];
 
 function Book(title, author, pages, completed) {
   this.title = title;
@@ -29,16 +31,20 @@ function displayLibrary(arr) {
 
   for (let i = 0; i < arr.length; i++) {
     let div = document.createElement("div");
-    let btn = document.createElement("button");
+    div.classList.add("book");
     booksCtn.appendChild(div);
 
     for (let j = 0; j < 3; j++) {
       let header = document.createElement("h3");
+      header.classList.add(headerClassNames[j]);
       div.appendChild(header);
-      header.textContent = "TEST";
     }
 
-    console.log(div[0]);
+    div.querySelector(".title-header").textContent = `${library[i].title}`;
+    div.querySelector(".title-author").textContent = `${library[i].author}`;
+    div.querySelector(".title-pages").textContent = `${library[i].pages}`;
+
+    console.log(div.querySelector(".title-header"));
   }
 }
 
