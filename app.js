@@ -1,10 +1,9 @@
 const library = [];
 const addBtn = document.querySelector("#add-btn");
-const completedBtn = Array.from(document.querySelectorAll(".completed"));
 const deleteBtn = Array.from(document.querySelectorAll(".book-delete"));
 const submitBtn = document.querySelector("#submit");
 const headerClassNames = ["title-header", "title-author", "title-pages"];
-const btnClassNames = ["completed", "book-delete"];
+markComplete();
 
 function Book(title, author, pages, completed) {
   this.title = title;
@@ -44,8 +43,27 @@ function displayLibrary(arr) {
     div.querySelector(".title-author").textContent = `${library[i].author}`;
     div.querySelector(".title-pages").textContent = `${library[i].pages}`;
 
+    let firstBtn = document.createElement("button");
+    let secondBtn = document.createElement("button");
+
+    if (library[i].completed === true) {
+      firstBtn.classList.add("completed");
+      firstBtn.textContent = "Completed";
+    } else {
+      firstBtn.classList.add("not-completed");
+      firstBtn.textContent = "Not Completed";
+    }
+
+    div.appendChild(firstBtn);
+
+    secondBtn.classList.add("book-delete");
+    secondBtn.textContent = "Remove Book";
+    div.appendChild(secondBtn);
+
     console.log(div.querySelector(".title-header"));
   }
+
+  markComplete();
 }
 
 // CLICK SUBMIT TO CREATE A NEW OBJ AND PUSH TO LIBRARY ARR
@@ -73,16 +91,20 @@ submitBtn.addEventListener("click", (e) => {
 // CLICK REMOVE BTN TO DELETE THAT OBJECT FROM LIBRARY ARR
 
 // CLICK THE COMPLETED BTN TO SHOW COMPLETED OR NOT
-completedBtn.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    if (e.target.innerText === "Completed") {
-      e.target.innerText = "Not Completed";
-      e.target.classList.remove("completed");
-      e.target.classList.add("not-completed");
-    } else {
-      e.target.innerText = "Completed";
-      e.target.classList.remove("not-completed");
-      e.target.classList.add("completed");
-    }
+function markComplete() {
+  const completedBtn = Array.from(document.querySelectorAll(".completed"));
+
+  completedBtn.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      if (e.target.innerText === "Completed") {
+        e.target.innerText = "Not Completed";
+        e.target.classList.remove("completed");
+        e.target.classList.add("not-completed");
+      } else {
+        e.target.innerText = "Completed";
+        e.target.classList.remove("not-completed");
+        e.target.classList.add("completed");
+      }
+    });
   });
-});
+}
