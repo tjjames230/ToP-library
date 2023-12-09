@@ -36,7 +36,6 @@ function displayLibrary(arr) {
       let header = document.createElement("h3");
       div.appendChild(header);
       header.textContent = "TEST";
-      // git test
     }
 
     console.log(div[0]);
