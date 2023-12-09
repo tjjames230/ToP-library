@@ -1,9 +1,28 @@
-const library = [];
+const library = [
+  {
+    title: "The Way of Kings",
+    author: "Brandon Sanderson",
+    pages: 1007,
+    completed: true,
+  },
+  {
+    title: "Words of Radiance",
+    author: "Brandon Sanderson",
+    pages: 1087,
+    completed: false,
+  },
+  {
+    title: "Red Rising",
+    author: "Pierce Brown",
+    pages: 382,
+    completed: true,
+  },
+];
 const addBtn = document.querySelector("#add-btn");
 const deleteBtn = Array.from(document.querySelectorAll(".book-delete"));
 const submitBtn = document.querySelector("#submit");
 const headerClassNames = ["title-header", "title-author", "title-pages"];
-markComplete();
+displayLibrary(library);
 
 function Book(title, author, pages, completed) {
   this.title = title;
@@ -39,9 +58,15 @@ function displayLibrary(arr) {
       div.appendChild(header);
     }
 
-    div.querySelector(".title-header").textContent = `${library[i].title}`;
-    div.querySelector(".title-author").textContent = `${library[i].author}`;
-    div.querySelector(".title-pages").textContent = `${library[i].pages}`;
+    div.querySelector(
+      ".title-header"
+    ).textContent = `Title: ${library[i].title}`;
+    div.querySelector(
+      ".title-author"
+    ).textContent = `Author: ${library[i].author}`;
+    div.querySelector(
+      ".title-pages"
+    ).textContent = `Pages: ${library[i].pages}`;
 
     let firstBtn = document.createElement("button");
     let secondBtn = document.createElement("button");
@@ -92,7 +117,9 @@ submitBtn.addEventListener("click", (e) => {
 
 // CLICK THE COMPLETED BTN TO SHOW COMPLETED OR NOT
 function markComplete() {
-  const completedBtn = Array.from(document.querySelectorAll(".completed"));
+  const completedBtn = Array.from(
+    document.querySelectorAll(".completed, .not-completed")
+  );
 
   completedBtn.forEach((btn) => {
     btn.addEventListener("click", (e) => {
