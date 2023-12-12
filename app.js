@@ -114,6 +114,14 @@ submitBtn.addEventListener("click", (e) => {
 // CLICK REMOVE BTN TO DELETE THAT OBJECT FROM LIBRARY ARR
 function deleteBook() {
   const deleteBtn = Array.from(document.querySelectorAll(".book-delete"));
+
+  deleteBtn.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      let cardTitle = e.target.parentNode.firstChild.innerText.slice(7);
+      library = library.filter((book) => book.title !== cardTitle);
+      displayLibrary(library);
+    });
+  });
 }
 
 // CLICK THE COMPLETED BTN TO SHOW COMPLETED OR NOT

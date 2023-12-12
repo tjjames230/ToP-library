@@ -66,6 +66,10 @@ button:hover,
   font-size: 18px;
 }
 
+.title-pages {
+  flex-grow: 1;
+}
+
 .completed,
 #submit {
   background-color: hsl(124, 100%, 52%);
