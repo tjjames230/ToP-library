@@ -1,4 +1,4 @@
-const library = [
+let library = [
   {
     title: "The Way of Kings",
     author: "Brandon Sanderson",
@@ -19,7 +19,6 @@ const library = [
   },
 ];
 const addBtn = document.querySelector("#add-btn");
-const deleteBtn = Array.from(document.querySelectorAll(".book-delete"));
 const submitBtn = document.querySelector("#submit");
 const headerClassNames = ["title-header", "title-author", "title-pages"];
 displayLibrary(library);
@@ -84,11 +83,10 @@ function displayLibrary(arr) {
     secondBtn.classList.add("book-delete");
     secondBtn.textContent = "Remove Book";
     div.appendChild(secondBtn);
-
-    console.log(div.querySelector(".title-header"));
   }
 
   markComplete();
+  deleteBook();
 }
 
 // CLICK SUBMIT TO CREATE A NEW OBJ AND PUSH TO LIBRARY ARR
@@ -114,6 +112,9 @@ submitBtn.addEventListener("click", (e) => {
 });
 
 // CLICK REMOVE BTN TO DELETE THAT OBJECT FROM LIBRARY ARR
+function deleteBook() {
+  const deleteBtn = Array.from(document.querySelectorAll(".book-delete"));
+}
 
 // CLICK THE COMPLETED BTN TO SHOW COMPLETED OR NOT
 function markComplete() {
@@ -123,14 +124,26 @@ function markComplete() {
 
   completedBtn.forEach((btn) => {
     btn.addEventListener("click", (e) => {
+      let cardTitle = e.target.parentNode.firstChild.innerText.slice(7);
+
       if (e.target.innerText === "Completed") {
         e.target.innerText = "Not Completed";
         e.target.classList.remove("completed");
         e.target.classList.add("not-completed");
+        for (let i = 0; i < library.length; i++) {
+          if (cardTitle === library[i].title) {
+            library[i].completed = false;
+          }
+        }
       } else {
         e.target.innerText = "Completed";
         e.target.classList.remove("not-completed");
         e.target.classList.add("completed");
+        for (let i = 0; i < library.length; i++) {
+          if (cardTitle === library[i].title) {
+            library[i].completed = true;
+          }
+        }
       }
     });
   });
