@@ -23,11 +23,13 @@ const submitBtn = document.querySelector("#submit");
 const headerClassNames = ["title-header", "title-author", "title-pages"];
 displayLibrary(library);
 
-function Book(title, author, pages, completed) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.completed = completed;
+class Books {
+  constructor(title, author, pages, completed) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.completed = completed;
+  }
 }
 
 // CLICK ADD TO OPEN NEW BOOK FORM
@@ -99,7 +101,7 @@ submitBtn.addEventListener("click", (e) => {
   let bookCompleted = document.querySelector("#yes").checked ? true : false;
 
   if (bookTitle != "" && bookAuthor != "" && bookLength != "") {
-    let newBook = new Book(bookTitle, bookAuthor, bookLength, bookCompleted);
+    let newBook = new Books(bookTitle, bookAuthor, bookLength, bookCompleted);
     library.push(newBook);
   }
 
